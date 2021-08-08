@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,13 @@
 		AB13ED6326BBB3A3002F56FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB13ED6126BBB3A3002F56FF /* Main.storyboard */; };
 		AB13ED6526BBB3A4002F56FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB13ED6426BBB3A4002F56FF /* Assets.xcassets */; };
 		AB13ED6826BBB3A4002F56FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB13ED6626BBB3A4002F56FF /* LaunchScreen.storyboard */; };
+		AB13EDB826BFCB31002F56FF /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13EDB626BFCB31002F56FF /* CustomTableViewCell.swift */; };
+		AB13EDB926BFCB31002F56FF /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB13EDB726BFCB31002F56FF /* CustomTableViewCell.xib */; };
+		AB13EDBB26BFCC4B002F56FF /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13EDBA26BFCC4B002F56FF /* Fruit.swift */; };
+		AB13EDC326BFCE95002F56FF /* AdditionalFruit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB13EDC226BFCE95002F56FF /* AdditionalFruit.storyboard */; };
+		AB13EDC526BFCEA6002F56FF /* AdditionalFruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13EDC426BFCEA6002F56FF /* AdditionalFruitViewController.swift */; };
+		AB13EDC726BFD12D002F56FF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13EDC626BFD12D002F56FF /* ViewModel.swift */; };
+		AB13EDC926BFD141002F56FF /* AdditionalFruitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13EDC826BFD141002F56FF /* AdditionalFruitViewModel.swift */; };
 		B3EFD96EF9259183C3649D51 /* Pods_oonishiReonKadai14.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76D3DABF9B72F378AE4B734 /* Pods_oonishiReonKadai14.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +34,13 @@
 		AB13ED6426BBB3A4002F56FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB13ED6726BBB3A4002F56FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB13ED6926BBB3A4002F56FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB13EDB626BFCB31002F56FF /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		AB13EDB726BFCB31002F56FF /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		AB13EDBA26BFCC4B002F56FF /* Fruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruit.swift; sourceTree = "<group>"; };
+		AB13EDC226BFCE95002F56FF /* AdditionalFruit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdditionalFruit.storyboard; sourceTree = "<group>"; };
+		AB13EDC426BFCEA6002F56FF /* AdditionalFruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFruitViewController.swift; sourceTree = "<group>"; };
+		AB13EDC626BFD12D002F56FF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		AB13EDC826BFD141002F56FF /* AdditionalFruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdditionalFruitViewModel.swift; path = /Users/oonishireon/Desktop/oonishiReonKadai14/oonishiReonKadai14/ViewModels/AdditionalFruitViewModel.swift; sourceTree = "<absolute>"; };
 		E76D3DABF9B72F378AE4B734 /* Pods_oonishiReonKadai14.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oonishiReonKadai14.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -48,7 +62,6 @@
 				142DA63AC4F17BBEFAA5D90E /* Pods-oonishiReonKadai14.debug.xcconfig */,
 				4310AAD9351274D7EFCFB15D /* Pods-oonishiReonKadai14.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +94,70 @@
 		AB13ED5A26BBB3A3002F56FF /* oonishiReonKadai14 */ = {
 			isa = PBXGroup;
 			children = (
+				AB13EDBE26BFCE1C002F56FF /* Models */,
+				AB13EDBD26BFCE18002F56FF /* Views */,
+				AB13EDBC26BFCE0E002F56FF /* ViewModels */,
 				AB13ED5B26BBB3A3002F56FF /* AppDelegate.swift */,
 				AB13ED5D26BBB3A3002F56FF /* SceneDelegate.swift */,
-				AB13ED5F26BBB3A3002F56FF /* ViewController.swift */,
-				AB13ED6126BBB3A3002F56FF /* Main.storyboard */,
 				AB13ED6426BBB3A4002F56FF /* Assets.xcassets */,
 				AB13ED6626BBB3A4002F56FF /* LaunchScreen.storyboard */,
 				AB13ED6926BBB3A4002F56FF /* Info.plist */,
 			);
 			path = oonishiReonKadai14;
+			sourceTree = "<group>";
+		};
+		AB13EDBC26BFCE0E002F56FF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AB13EDC626BFD12D002F56FF /* ViewModel.swift */,
+				AB13EDC826BFD141002F56FF /* AdditionalFruitViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		AB13EDBD26BFCE18002F56FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB13EDC126BFCE3F002F56FF /* Storyboards */,
+				AB13EDC026BFCE30002F56FF /* Controllers */,
+				AB13EDBF26BFCE2B002F56FF /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB13EDBE26BFCE1C002F56FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB13EDBA26BFCC4B002F56FF /* Fruit.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AB13EDBF26BFCE2B002F56FF /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AB13EDB626BFCB31002F56FF /* CustomTableViewCell.swift */,
+				AB13EDB726BFCB31002F56FF /* CustomTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		AB13EDC026BFCE30002F56FF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB13ED5F26BBB3A3002F56FF /* ViewController.swift */,
+				AB13EDC426BFCEA6002F56FF /* AdditionalFruitViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AB13EDC126BFCE3F002F56FF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AB13ED6126BBB3A3002F56FF /* Main.storyboard */,
+				AB13EDC226BFCE95002F56FF /* AdditionalFruit.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +221,9 @@
 			files = (
 				AB13ED6826BBB3A4002F56FF /* LaunchScreen.storyboard in Resources */,
 				AB13ED6526BBB3A4002F56FF /* Assets.xcassets in Resources */,
+				AB13EDB926BFCB31002F56FF /* CustomTableViewCell.xib in Resources */,
 				AB13ED6326BBB3A3002F56FF /* Main.storyboard in Resources */,
+				AB13EDC326BFCE95002F56FF /* AdditionalFruit.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,9 +276,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB13EDC926BFD141002F56FF /* AdditionalFruitViewModel.swift in Sources */,
+				AB13EDC526BFCEA6002F56FF /* AdditionalFruitViewController.swift in Sources */,
+				AB13EDBB26BFCC4B002F56FF /* Fruit.swift in Sources */,
 				AB13ED6026BBB3A3002F56FF /* ViewController.swift in Sources */,
 				AB13ED5C26BBB3A3002F56FF /* AppDelegate.swift in Sources */,
+				AB13EDB826BFCB31002F56FF /* CustomTableViewCell.swift in Sources */,
 				AB13ED5E26BBB3A3002F56FF /* SceneDelegate.swift in Sources */,
+				AB13EDC726BFD12D002F56FF /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

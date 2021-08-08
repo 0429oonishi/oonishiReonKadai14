@@ -6,3 +6,33 @@
 //
 
 import Foundation
+
+protocol AdditionalFruitViewModelInput {
+    
+}
+
+protocol AdditionalFruitViewModelOutput: AnyObject {
+    
+}
+
+protocol AdditionalFruitViewModelType {
+    var inputs: AdditionalFruitViewModelInput { get }
+    var outputs: AdditionalFruitViewModelOutput { get }
+}
+
+final class AdditionalFruitViewModel: AdditionalFruitViewModelInput,
+                                      AdditionalFruitViewModelOutput {
+    
+}
+
+extension AdditionalFruitViewModel: AdditionalFruitViewModelType {
+    
+    var inputs: AdditionalFruitViewModelInput {
+        return self
+    }
+    
+    var outputs: AdditionalFruitViewModelOutput {
+        return self
+    }
+    
+}

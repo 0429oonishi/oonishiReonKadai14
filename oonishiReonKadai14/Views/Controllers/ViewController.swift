@@ -35,6 +35,14 @@ final class ViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
     
+    @IBAction func additionalButtonDidTapped(_ sender: Any) {
+        let additionalFruitVC = AdditionalFruitViewController.instantiate()
+        additionalFruitVC.delegate = self
+        let navigationController = UINavigationController(rootViewController: additionalFruitVC)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true, completion: nil)
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate {
@@ -59,6 +67,15 @@ extension ViewController: UITableViewDataSource {
         let fruit = fruits[indexPath.row]
         cell.configure(fruit: fruit)
         return cell
+    }
+    
+}
+
+extension ViewController: AdditionalFruitVCDelegate {
+    
+    func saveButtonDidTapped(name: String) {
+        fruits.append(Fruit(name: name, isChecked: false))
+        tableView.reloadData()
     }
     
 }

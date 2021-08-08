@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/oonishireon/Desktop/oonishiReonKadai14/oonishiReonKadai14/ViewModels/AdditionalFruitViewModel.swift">
+   </FileRef>
+   <FileRef
       location = "group:oonishiReonKadai14.xcodeproj">
    </FileRef>
    <FileRef
