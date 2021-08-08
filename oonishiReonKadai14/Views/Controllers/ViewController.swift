@@ -6,24 +6,25 @@
 //
 
 import UIKit
-
-private extension Fruit {
-    static let sampleData = [Fruit(name: "りんご", isChecked: false),
-                             Fruit(name: "みかん", isChecked: true),
-                             Fruit(name: "ぶどう", isChecked: false),
-                             Fruit(name: "もも", isChecked: true)]
-}
+import RxSwift
+import RxCocoa
 
 final class ViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var additionalButton: UIBarButtonItem!
     
-    private var fruits = Fruit.sampleData
+    private var fruits: [Fruit] {
+        viewModel.outputs.fruits
+    }
+    private let viewModel: ViewModelType = ViewModel()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView()
+        setupBindings()
         
     }
     
@@ -35,12 +36,25 @@ final class ViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
     
-    @IBAction func additionalButtonDidTapped(_ sender: Any) {
-        let additionalFruitVC = AdditionalFruitViewController.instantiate()
-        additionalFruitVC.delegate = self
-        let navigationController = UINavigationController(rootViewController: additionalFruitVC)
-        navigationController.modalPresentationStyle = .fullScreen
-        present(navigationController, animated: true, completion: nil)
+    private func setupBindings() {
+        additionalButton.rx.tap
+            .subscribe(onNext: viewModel.inputs.additionalButtonDidTapped)
+            .disposed(by: disposeBag)
+        
+        viewModel.outputs.event
+            .drive(onNext: { [weak self] event in
+                switch event {
+                    case .presentAdditionalFruitVC:
+                        let additionalFruitVC = AdditionalFruitViewController.instantiate()
+                        additionalFruitVC.delegate = self
+                        let navigationController = UINavigationController(rootViewController: additionalFruitVC)
+                        navigationController.modalPresentationStyle = .fullScreen
+                        self?.present(navigationController, animated: true, completion: nil)
+                    case .reloadData:
+                        self?.tableView.reloadData()
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
 }
@@ -63,7 +77,9 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: CustomTableViewCell.identifier
+        ) as! CustomTableViewCell
         let fruit = fruits[indexPath.row]
         cell.configure(fruit: fruit)
         return cell
@@ -72,10 +88,9 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: AdditionalFruitVCDelegate {
-    
-    func saveButtonDidTapped(name: String) {
-        fruits.append(Fruit(name: name, isChecked: false))
-        tableView.reloadData()
+     
+    func saveButtonDidTapped(name: String?) {
+        viewModel.inputs.saveButtonDidTapped(name: name) 
     }
     
 }

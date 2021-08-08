@@ -19,7 +19,7 @@
 		AB13EDC326BFCE95002F56FF /* AdditionalFruit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB13EDC226BFCE95002F56FF /* AdditionalFruit.storyboard */; };
 		AB13EDC526BFCEA6002F56FF /* AdditionalFruitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13EDC426BFCEA6002F56FF /* AdditionalFruitViewController.swift */; };
 		AB13EDC726BFD12D002F56FF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13EDC626BFD12D002F56FF /* ViewModel.swift */; };
-		AB13EDC926BFD141002F56FF /* AdditionalFruitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13EDC826BFD141002F56FF /* AdditionalFruitViewModel.swift */; };
+		AB13EDCF26BFD1D8002F56FF /* AdditionalFruitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB13EDCE26BFD1D8002F56FF /* AdditionalFruitViewModel.swift */; };
 		B3EFD96EF9259183C3649D51 /* Pods_oonishiReonKadai14.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76D3DABF9B72F378AE4B734 /* Pods_oonishiReonKadai14.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +40,7 @@
 		AB13EDC226BFCE95002F56FF /* AdditionalFruit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdditionalFruit.storyboard; sourceTree = "<group>"; };
 		AB13EDC426BFCEA6002F56FF /* AdditionalFruitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFruitViewController.swift; sourceTree = "<group>"; };
 		AB13EDC626BFD12D002F56FF /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		AB13EDC826BFD141002F56FF /* AdditionalFruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AdditionalFruitViewModel.swift; path = /Users/oonishireon/Desktop/oonishiReonKadai14/oonishiReonKadai14/ViewModels/AdditionalFruitViewModel.swift; sourceTree = "<absolute>"; };
+		AB13EDCE26BFD1D8002F56FF /* AdditionalFruitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalFruitViewModel.swift; sourceTree = "<group>"; };
 		E76D3DABF9B72F378AE4B734 /* Pods_oonishiReonKadai14.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oonishiReonKadai14.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -110,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				AB13EDC626BFD12D002F56FF /* ViewModel.swift */,
-				AB13EDC826BFD141002F56FF /* AdditionalFruitViewModel.swift */,
+				AB13EDCE26BFD1D8002F56FF /* AdditionalFruitViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -276,7 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB13EDC926BFD141002F56FF /* AdditionalFruitViewModel.swift in Sources */,
+				AB13EDCF26BFD1D8002F56FF /* AdditionalFruitViewModel.swift in Sources */,
 				AB13EDC526BFCEA6002F56FF /* AdditionalFruitViewController.swift in Sources */,
 				AB13EDBB26BFCC4B002F56FF /* Fruit.swift in Sources */,
 				AB13ED6026BBB3A3002F56FF /* ViewController.swift in Sources */,

@@ -40,20 +40,14 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="追加" id="Owa-aI-a4r">
-                        <barButtonItem key="leftBarButtonItem" title="cancel" id="JPx-OH-lMf">
-                            <connections>
-                                <action selector="cancelButtonDidTapped:" destination="Y6W-OH-hqX" id="jwk-3U-SMB"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="save" id="GTQ-FC-pXP">
-                            <connections>
-                                <action selector="saveButtonDidTapped:" destination="Y6W-OH-hqX" id="Lcn-tt-1d8"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="cancel" id="JPx-OH-lMf"/>
+                        <barButtonItem key="rightBarButtonItem" title="save" id="GTQ-FC-pXP"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cancelButton" destination="JPx-OH-lMf" id="EFI-BB-1jC"/>
+                        <outlet property="saveButton" destination="GTQ-FC-pXP" id="Lc3-Nf-bKE"/>
                         <outlet property="textField" destination="chY-IL-dFK" id="zp9-Ur-cKQ"/>
                     </connections>
                 </viewController>

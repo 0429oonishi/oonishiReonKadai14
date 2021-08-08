@@ -31,14 +31,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UXV-u4-R4I">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Mdd-JL-ar4">
-                            <connections>
-                                <action selector="additionalButtonDidTapped:" destination="BYZ-38-t0r" id="zfT-3S-sNs"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Mdd-JL-ar4"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="additionalButton" destination="Mdd-JL-ar4" id="oXL-nW-lmu"/>
                         <outlet property="tableView" destination="MKD-RQ-aoG" id="KHg-rq-3fS"/>
                     </connections>
                 </viewController>
