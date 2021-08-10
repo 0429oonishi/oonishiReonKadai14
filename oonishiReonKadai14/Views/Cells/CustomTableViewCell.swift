@@ -20,9 +20,4 @@ final class CustomTableViewCell: UITableViewCell {
         checkButton.setImage(image, for: .normal)
         nameLabel.text = fruit.name
     }
-    
-    @IBAction func checkButtonDidTapped(_ sender: Any) {
-        print(#function)
-    }
-    
 }

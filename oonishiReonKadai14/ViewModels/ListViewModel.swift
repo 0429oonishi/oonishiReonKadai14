@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  ListViewModel.swift
 //  oonishiReonKadai14
 //
 //  Created by 大西玲音 on 2021/08/08.
@@ -15,7 +15,7 @@ protocol ViewModelInput {
 }
 
 protocol ViewModelOutput: AnyObject {
-    var event: Driver<ViewModel.Event> { get }
+    var event: Driver<ListViewModel.Event> { get }
     var fruits: [Fruit] { get }
 }
 
@@ -24,7 +24,7 @@ protocol ViewModelType {
     var outputs: ViewModelOutput { get }
 }
 
-final class ViewModel: ViewModelInput, ViewModelOutput {
+final class ListViewModel: ViewModelInput, ViewModelOutput {
     
     enum Event {
         case presentAdditionalFruitVC
@@ -34,7 +34,11 @@ final class ViewModel: ViewModelInput, ViewModelOutput {
         eventRelay.asDriver(onErrorDriveWith: .empty())
     }
     private let eventRelay = PublishRelay<Event>()
-    
+
+    var fruits: [Fruit] {
+        fruitList.fruits
+    }
+
     func additionalButtonDidTapped() {
         eventRelay.accept(.presentAdditionalFruitVC)
     }
@@ -43,15 +47,14 @@ final class ViewModel: ViewModelInput, ViewModelOutput {
         guard let name = name,
               !name.isEmpty else { return }
         let fruit = Fruit(name: name, isChecked: false)
-        fruits.append(fruit)
+        fruitList.append(fruit: fruit)
         eventRelay.accept(.reloadData)
     }
     
-    var fruits: [Fruit] = Fruit.sampleData
-    
+    let fruitList = FruitList()
 }
 
-extension ViewModel: ViewModelType {
+extension ListViewModel: ViewModelType {
     
     var inputs: ViewModelInput {
         return self 
@@ -61,11 +64,4 @@ extension ViewModel: ViewModelType {
         return self
     }
     
-}
-
-private extension Fruit {
-    static let sampleData = [Fruit(name: "りんご", isChecked: false),
-                             Fruit(name: "みかん", isChecked: true),
-                             Fruit(name: "ぶどう", isChecked: false),
-                             Fruit(name: "もも", isChecked: true)]
 }
