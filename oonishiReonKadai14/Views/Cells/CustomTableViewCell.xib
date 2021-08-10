@@ -28,9 +28,6 @@
                             <constraint firstAttribute="width" secondItem="YnV-ng-KIN" secondAttribute="height" id="Otv-D4-7LK"/>
                         </constraints>
                         <state key="normal" image="checkmark" catalog="system"/>
-                        <connections>
-                            <action selector="checkButtonDidTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="z1S-dZ-k64"/>
-                        </connections>
                     </button>
                 </subviews>
                 <constraints>

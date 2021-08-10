@@ -27,7 +27,6 @@ final class AdditionalFruitViewController: UIViewController {
         super.viewDidLoad()
         
         setupBindings()
-        
     }
     
     private func setupBindings() {
