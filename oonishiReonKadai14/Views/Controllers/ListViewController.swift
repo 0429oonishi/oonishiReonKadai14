@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ListViewController.swift
 //  oonishiReonKadai14
 //
 //  Created by 大西玲音 on 2021/08/05.
@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class ViewController: UIViewController {
+final class ListViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var additionalButton: UIBarButtonItem!
@@ -59,7 +59,7 @@ final class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDelegate {
+extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -68,7 +68,7 @@ extension ViewController: UITableViewDelegate {
     
 }
 
-extension ViewController: UITableViewDataSource {
+extension ListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
@@ -87,7 +87,7 @@ extension ViewController: UITableViewDataSource {
     
 }
 
-extension ViewController: AdditionalFruitVCDelegate {
+extension ListViewController: AdditionalFruitVCDelegate {
      
     func saveButtonDidTapped(name: String?) {
         viewModel.inputs.saveButtonDidTapped(name: name) 
