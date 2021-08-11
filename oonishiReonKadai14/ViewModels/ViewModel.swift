@@ -35,6 +35,11 @@ final class ViewModel: ViewModelInput, ViewModelOutput {
     }
     private let eventRelay = PublishRelay<Event>()
     
+    let fruitList = FruitList()
+    var fruits: [Fruit] {
+        fruitList.fruits
+    }
+    
     func additionalButtonDidTapped() {
         eventRelay.accept(.presentAdditionalFruitVC)
     }
@@ -43,11 +48,9 @@ final class ViewModel: ViewModelInput, ViewModelOutput {
         guard let name = name,
               !name.isEmpty else { return }
         let fruit = Fruit(name: name, isChecked: false)
-        fruits.append(fruit)
+        fruitList.append(fruit: fruit)
         eventRelay.accept(.reloadData)
     }
-    
-    var fruits: [Fruit] = Fruit.sampleData
     
 }
 
@@ -63,9 +66,3 @@ extension ViewModel: ViewModelType {
     
 }
 
-private extension Fruit {
-    static let sampleData = [Fruit(name: "りんご", isChecked: false),
-                             Fruit(name: "みかん", isChecked: true),
-                             Fruit(name: "ぶどう", isChecked: false),
-                             Fruit(name: "もも", isChecked: true)]
-}
